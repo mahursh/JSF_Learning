@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <!--<h:outputStylesheet library="css" name="/style.css"/>-->
+</h:head>
+<f:view>
+    <h1>hello</h1>
+<!--    <input type="file"/>-->
+    <h:form enctype="multipart/form-data">
+
+        <h:outputLabel for="title" value="Enter your name" required="true"/>
+
+        <h:inputText id="title" label="" value="#{group.title}">
+            <f:validateBean for="title"/>
+        </h:inputText>
+
+        <h:message for="title"/>
+
+        <br/>
+
+        <h:inputFile name="file" value="#{service.file}"/>
+
+        <br/>
+
+        <h:commandButton value="Upload" action="#{service.upload()}"/>
+
+        <h:commandButton value="Save" action="#{groupService.save(group)}">
+
+            <f:ajax execute="@form" render="groupTable @form"/>
+
+        </h:commandButton>
+
+        <h:selectOneMenu id="groups" >
+            <f:selectItems value="#{groupService.findAll()}"/>
+        </h:selectOneMenu>
+
+<!--        <br/>-->
+    </h:form>
+
+    <h:dataTable id="groupTable" value = "#{groupService.findAll()}" var = "g">
+<!--                 styleClass = "employeeTable"-->
+<!--                 headerClass = "employeeTableHeader"-->
+<!--                 rowClasses = "employeeTableOddRow,employeeTableEvenRow">-->
+
+        <h:column>
+            <f:facet name = "header">Id</f:facet>
+            #{g.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name = "header">Title</f:facet>
+            #{g.title}
+        </h:column>
+    </h:dataTable>
+</f:view>
+</html>

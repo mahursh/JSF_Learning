@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>User Details</title>
+</h:head>
+
+<h:body>
+    <h2><h:outputText value="Hello #{user.name}  #{user.family}"/></h2>
+    <h4><h:outputText value="You have Registered with us Successfully, Your Details are The Following."/></h4>
+    <table>
+
+        <tr>
+            <td><b>Age: </b></td>
+            <td><h:outputText value="#{user.age}"/><br/></td>
+        </tr>
+
+        <tr>
+            <td><b>Salary: </b></td>
+            <td><h:outputText value="#{user.salary}"/><br/></td>
+        </tr>
+
+<!--        todo:  وقتی عددم خیلی بزرگ میشه یه عدد بی ربط و منفی نشون میده-->
+        <tr>
+            <td><b>Salary: </b></td>
+            <td><h:outputText value="#{user.salary}"/><br/></td>
+            <td><f:convertNumber pattern="$###" />  </td>
+        </tr>
+
+
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime type="date" dateStyle="medium"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime type="time" dateStyle="full"/> </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime type="date" dateStyle="full"/></td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime type="date" pattern="dd/mm/yyyy"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime dateStyle="full" pattern="yyyy-mm-dd"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime dateStyle="full" pattern="yyyy.MM.dd 'at' HH:mm:ss z"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime dateStyle="full" pattern="h:mm a"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime dateStyle="long" timeZone="EST" type="both"/></td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime locale="de" timeStyle="long" type="both" dateStyle="full"/>  </td>
+        </tr>
+        <tr>
+            <td><b>Date Of Birth: </b></td>
+            <td><h:outputText value="#{user.birthDate}"/><br/></td>
+            <td><f:convertDateTime locale="en" timeStyle="short" type="both" dateStyle="full"/> </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td><b>Email: </b></td>
+            <td><h:outputText value="#{user.email}"/><br/></td>
+        </tr>
+        <tr>
+            <td><b>Password:</b></td>
+            <td><h:outputText value="#{user.password}"/><br/></td>
+        </tr>
+        <tr>
+            <td><b>Gender:</b></td>
+            <td><h:outputText value="#{user.gender}"/><br/></td>
+        </tr>
+        <tr>
+            <td><b>Address: </b></td>
+            <td><h:outputText value="#{user.address}"/></td>
+        </tr>
+    </table>
+</h:body>
+
+</html>
